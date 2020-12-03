@@ -9,7 +9,6 @@ status_list = [None, None]
 times = []
 df = pandas.DataFrame(columns=["Start", "End"])
 video = cv2.VideoCapture(0)
-#length = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
 
 # Define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
@@ -51,9 +50,6 @@ while True:
     if status_list[-1] == 0 and status_list[-2] == 1:
         times.append(datetime.now().strftime("%I-%M-%S_%p"))
 
-    #cv2.imshow("Gray Frame", gray)
-    #cv2.imshow("Delta Frame", delta_frame)
-    #cv2.imshow("Threshold Frame", thresh_frame)
     cv2.imshow("Color Frame", frame)
     out.write(frame)
 
@@ -70,7 +66,6 @@ for i in range(0, len(times), 2):
     df = df.append({"Start": times[i], "End": times[i + 1]}, ignore_index=True)
 file_name = datetime.now().strftime("%d-%m-%Y_%I-%M-%S_%p")
 df.to_csv(str(file_name) + ".csv")
-#print("Writing frame {} / {}".format(frame_number, length))
 
 video.release()
 out.release()
