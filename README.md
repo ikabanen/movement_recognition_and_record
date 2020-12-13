@@ -1,4 +1,4 @@
-# movement recognition and recording with Python ❤️
+# movement recognition and recording with Python :ghost:
 Recording of movement detected by computer web camera
 
 Written in Python 3.7
