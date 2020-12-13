@@ -1,5 +1,5 @@
 # movement recognition and recording with Python :ghost:
-Recording of movement detected by computer web camera
+Detecting movement using computer web camera and recording it.:eye_speech_bubble:
 
 Written in Python 3.7
 
